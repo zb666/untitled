@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
-
+// import './App.css
+import 'App.css'
 class App extends Component {
   render() {
     return (
@@ -11,18 +11,19 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <a
+          <b
             className="App-link"
             href="https://reactjs.org"
             target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+            rel="noopener noreferrer">
+
+            开始学习ReactNative
+          </b>
         </header>
       </div>
     );
   }
 }
+
 
 export default App;
