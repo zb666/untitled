@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello World</title>
+    <!--用于dom以及相关ui的渲染  通过rn绑定到相应的组件中然后进行render进行渲染-->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<script type="text/babel">
+
+    //<遇到大写的尖括号的时候 则表示要去请求组件
+
+    class Person extends React.Component{
+        render(){
+            return <h1>Hello,{this.props.name}</h1>;
+        }
+    }
+
+    //定义函 表示遇到这个标签的时候 就去进行元素的查找
+
+    //这是组件  这个组件是用来做封装的，属性就是name用它来做占位符号的
+    let ele = <Person name = "This is Body"/>
+    ReactDOM.render(ele,document.getElementById("root"));
+
+    function CallName() {
+       return (
+           <div>
+               <Person name = "River"/>
+               <Person name = "Bob"/>
+           </div>
+       )
+    }
+
+    //调用函数 入参就是
+    ReactDOM.render(<CallName/>,document.getElementById("root"))
+
+
+
+</script>
+<body>
+
+<div id="root"></div>
+
+</body>
+</html>
