@@ -38,7 +38,23 @@
     //调用函数 入参就是
     ReactDOM.render(<CallName/>,document.getElementById("root"))
 
+    /*关于属性的修改*/
+    class Clock extends React.Component{
+        //props是不能进行修改的 但是state却可以
+        constructor(props){
+            super(props)
+            this.state = {date:new Date()}
+        }
 
+        tick(){
+            this.setState(
+                {date:new Date()}
+            );
+        }
+
+
+
+    }
 
 </script>
 <body>
