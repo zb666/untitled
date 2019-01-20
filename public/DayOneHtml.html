@@ -39,6 +39,7 @@
     ReactDOM.render(<CallName/>,document.getElementById("root"))
 
     /*关于属性的修改*/
+    //用类的方式封装组件
     class Clock extends React.Component{
         //props是不能进行修改的 但是state却可以
         constructor(props){
@@ -51,10 +52,25 @@
                 {date:new Date()}
             );
         }
-
-
-
+        componentDisMount(){
+            this.timerId = setInterval(
+                ()=>this.tick(),1000
+            )
+        }
+        componentWillUnmount(){
+            clearInterval(this.timerId)
+        }
+        render(){
+            return (
+                <div>
+                    <h1>Hello world</h1>
+                    <h2>It is {this.state.date.toLocaleDateString()}</h2>
+                </div>
+            );
+        }
     }
+
+    ReactDOM.render(<Clock/>,document.getElementById("root"))
 
 </script>
 <body>
